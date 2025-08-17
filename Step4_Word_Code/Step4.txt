@@ -1,0 +1,37 @@
+Step 4: Implement the Solution (Word Coding)
+START
+time = the system clock
+food_in_bowl = weight of remaining food in the bowl
+food_in_feeder = weight of remaining food in the feeder
+consumed_food = weight of consumed food
+
+1. Check whether current time is feeding time.
+   IF time = 08:00 OR 14:00 THEN
+       Proceed
+   ELSE
+       Go to END
+
+
+2. Check the food in the bowl; if remain is more than the setting value, skip the dispensing process.
+   IF food_in_bowl >= 2kg THEN
+       Skip dispensing and go to END
+   ELSE
+       Dispense food into bowl
+
+
+3. After dispensing, check food in the feeder. And alert if the remaining food in the feeder is inadequate
+   IF food_in_feeder < 2kg THEN
+       Trigger Alert
+   ELSE
+       Display "Food dispensed and available"
+
+
+4. Monitor consumption. And alert if the consumed food is less than 1kg.
+   Measure the change of food in bowl for 30 minutes.
+   IF consumed_food < 1kg THEN
+       Trigger Alert
+   ELSE
+       Continue
+
+
+END
